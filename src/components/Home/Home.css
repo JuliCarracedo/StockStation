@@ -1,0 +1,19 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2%;
+}
+
+.company-link {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 20vh;
+}
