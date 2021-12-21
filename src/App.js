@@ -7,6 +7,8 @@ import './App.css';
 import CompanyPage from './components/CompanyPage';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
+import ErrorPage from './pages/Error';
+import Loading from './pages/Loading';
 import requestData, { companies } from './redux/stocks/async';
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        {error ? (<div>API request quota reached</div>) : (loading ? <div> Loading</div> : (
+        {error ? (<ErrorPage />) : (loading ? <Loading /> : (
           <Routes>
             <Route exact path="/" element={<Home />} />
             {companies.map((company) => <Route key={company} exact path={`/${company}`} element={<CompanyPage title={company} />} />)}

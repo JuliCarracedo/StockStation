@@ -16,22 +16,30 @@ const requestData = () => async (dispatch) => {
 
   try {
     list.push(await fetchCompany(baseUrl, companies[0], apikey));
-
+  } catch (e) { dispatch(loadDataFail()); }
+  try {
     list.push(await fetchCompany(baseUrl, companies[1], apikey));
-
+  } catch (e) { dispatch(loadDataFail()); }
+  try {
     list.push(await fetchCompany(baseUrl, companies[2], apikey));
-
+  } catch (e) { dispatch(loadDataFail()); }
+  try {
     list.push(await fetchCompany(baseUrl, companies[3], apikey));
-
+  } catch (e) { dispatch(loadDataFail()); }
+  try {
     list.push(await fetchCompany(baseUrl, companies[4], apikey));
-
+  } catch (e) { dispatch(loadDataFail()); }
+  try {
     list.push(await fetchCompany(baseUrl, companies[5], apikey));
-
+  } catch (e) { dispatch(loadDataFail()); }
+  try {
     list.push(await fetchCompany(baseUrl, companies[6], apikey));
-
+  } catch (e) { dispatch(loadDataFail()); }
+  try {
     list.push(await fetchCompany(baseUrl, companies[7], apikey));
   } catch (e) { dispatch(loadDataFail()); }
-
+  if (!list[-1]) { dispatch(loadDataFail()); }
   dispatch(loadDataSuccess(list));
 };
+
 export default requestData;

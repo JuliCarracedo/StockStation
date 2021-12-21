@@ -2,7 +2,27 @@
     display: flex;
     box-sizing: border-box;
     width: 100%;
-    padding: 5% 5%;
+    padding: 1% 5%;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(21, 82, 56);
+}
+
+.nav-links{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-text {
+    width: 45%;
+    display: flex;
+    justify-content: end;
+    font-weight: 600;
+    color:white;
+}
+
+.nav-link {
+    fill: white;
 }
