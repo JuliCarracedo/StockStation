@@ -1,6 +1,6 @@
-const REQUEST_DATA = 'src/redux/stocks/stocks/REQUEST_DATA';
-const REQUEST_DATA_SUCCESS = 'src/redux/stocks/stocks/REQUEST_DATA_SUCCESS';
-const REQUEST_DATA_FAIL = 'src/redux/stocks/stocks/REQUEST_DATA_FAIL';
+export const REQUEST_DATA = 'src/redux/stocks/stocks/REQUEST_DATA';
+export const REQUEST_DATA_SUCCESS = 'src/redux/stocks/stocks/REQUEST_DATA_SUCCESS';
+export const REQUEST_DATA_FAIL = 'src/redux/stocks/stocks/REQUEST_DATA_FAIL';
 
 const initialState = { list: [] };
 

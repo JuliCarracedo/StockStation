@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 import CompanyLink from '../CompanyLink';
 import './Home.css';
 
-export const filterList = (list, filter) => {
+export const filterList = (listToFilter, filter) => {
   switch (filter) {
-    case 'income': return list.sort((a, b) => Number.parseFloat(b.income) - Number.parseFloat(a.income));
-    case 'eps': return list.sort((a, b) => Number.parseFloat(b.eps) - Number.parseFloat(a.eps));
-    case 'date': return list.sort((a, b) => new Date(b.date) - new Date(a.date));
-    case 'alphabetical': return list.sort((a, b) => ((a.symbol < b.symbol) ? -1 : 1));
-    default: return list;
+    case 'income': return listToFilter.sort((a, b) => Number.parseFloat(b.income) - Number.parseFloat(a.income));
+    case 'eps': return listToFilter.sort((a, b) => Number.parseFloat(b.eps) - Number.parseFloat(a.eps));
+    case 'date': return listToFilter.sort((a, b) => new Date(b.date) - new Date(a.date));
+    case 'alphabetical': return listToFilter.sort((a, b) => ((a.symbol < b.symbol) ? -1 : 1));
+    default: return listToFilter;
   }
 };
 
