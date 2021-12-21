@@ -18,7 +18,6 @@ const Home = () => {
   const [currentFilter, setFilter] = useState('default');
   const handleFilter = (e) => {
     e.stopPropagation();
-    console.log(e.target.value, 'selected');
     setFilter(e.target.value);
   };
   const filteredList = filterList(list, currentFilter);
