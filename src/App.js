@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import CompanyPage from './components/CompanyPage';
+import CompanyPage from './components/CompanyPage/CompanyPage';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import ErrorPage from './pages/Error';

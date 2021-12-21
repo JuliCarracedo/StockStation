@@ -20,7 +20,9 @@ const stocksReducer = (state = initialState, action) => {
   switch (action.type) {
     case REQUEST_DATA: return { ...state, loading: true };
     case REQUEST_DATA_SUCCESS:
-      return { ...state, loading: false, list: action.payload };
+      return {
+        ...state, loading: false, error: false, list: action.payload,
+      };
     case REQUEST_DATA_FAIL:
       return { ...state, loading: false, error: true };
     default: return state;

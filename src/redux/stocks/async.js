@@ -14,32 +14,23 @@ const requestData = () => async (dispatch) => {
   const list = [];
   dispatch(loadData());
 
-  try {
-    list.push(await fetchCompany(baseUrl, companies[0], apikey));
-  } catch (e) { dispatch(loadDataFail()); }
-  try {
-    list.push(await fetchCompany(baseUrl, companies[1], apikey));
-  } catch (e) { dispatch(loadDataFail()); }
-  try {
-    list.push(await fetchCompany(baseUrl, companies[2], apikey));
-  } catch (e) { dispatch(loadDataFail()); }
-  try {
-    list.push(await fetchCompany(baseUrl, companies[3], apikey));
-  } catch (e) { dispatch(loadDataFail()); }
-  try {
-    list.push(await fetchCompany(baseUrl, companies[4], apikey));
-  } catch (e) { dispatch(loadDataFail()); }
-  try {
-    list.push(await fetchCompany(baseUrl, companies[5], apikey));
-  } catch (e) { dispatch(loadDataFail()); }
-  try {
-    list.push(await fetchCompany(baseUrl, companies[6], apikey));
-  } catch (e) { dispatch(loadDataFail()); }
-  try {
-    list.push(await fetchCompany(baseUrl, companies[7], apikey));
-  } catch (e) { dispatch(loadDataFail()); }
-  if (!list[-1]) { dispatch(loadDataFail()); }
+  list.push(await fetchCompany(baseUrl, companies[0], apikey));
+
+  list.push(await fetchCompany(baseUrl, companies[1], apikey));
+
+  list.push(await fetchCompany(baseUrl, companies[2], apikey));
+
+  list.push(await fetchCompany(baseUrl, companies[3], apikey));
+
+  list.push(await fetchCompany(baseUrl, companies[4], apikey));
+
+  list.push(await fetchCompany(baseUrl, companies[5], apikey));
+
+  list.push(await fetchCompany(baseUrl, companies[6], apikey));
+
+  list.push(await fetchCompany(baseUrl, companies[7], apikey));
   dispatch(loadDataSuccess(list));
+  if (list[7] === undefined) { dispatch(loadDataFail()); }
 };
 
 export default requestData;
