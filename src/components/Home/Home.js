@@ -6,17 +6,19 @@ import './Home.css';
 const Home = () => {
   const { list } = useSelector((state) => state.stocks);
   const [currentFilter, setFilter] = useState('default');
+
   const filterFunction = (filter) => {
+    console.log(filter);
+    const tempList = list;
     switch (filter) {
-      case 'income': return list.sort(
+      case 'income': return tempList.sort(
         (a, b) => Number.parseFloat(a.income) - Number.parseFloat(b.income),
       );
-      case 'eps': return list.sort((a, b) => Number.parseFloat(a.eps) - Number.parseFloat(b.eps));
-      default: return list;
+      case 'eps': return tempList.sort((a, b) => Number.parseFloat(a.eps) - Number.parseFloat(b.eps));
+      case 'default': return tempList;
+      default: return tempList;
     }
   };
-
-  const sortedList = filterFunction(currentFilter);
 
   const handleFilter = (e) => {
     e.stopPropagation();
@@ -37,7 +39,7 @@ const Home = () => {
         <option value="eps">EPS</option>
       </select>
       <div className="links">
-        {sortedList.map(
+        {filterFunction(currentFilter).map(
           (company) => <CompanyLink key={company.symbol} title={company.symbol} />,
         )}
       </div>
