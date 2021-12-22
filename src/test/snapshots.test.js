@@ -27,11 +27,13 @@ describe('Application components', () => {
   test('App component Snapshot', () => {
     let component;
     act(() => {
-      component = renderer.create(<React.StrictMode>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </React.StrictMode>);
+      component = renderer.create(
+        <React.StrictMode>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </React.StrictMode>,
+      );
     });
 
     const tree = component.toJSON();
@@ -55,7 +57,7 @@ describe('Application components', () => {
     act(() => {
       component = renderer.create(
         <Provider store={store}>
-            <Home />
+          <Home />
         </Provider>,
       );
     });

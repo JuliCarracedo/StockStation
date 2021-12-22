@@ -4,7 +4,6 @@ import CompanyLink from '../CompanyLink';
 import './Home.css';
 
 export const filterList = (listToFilter, filter) => {
-  console.log(filter);
   switch (filter) {
     case 'income': return listToFilter.sort((a, b) => Number.parseFloat(b.netIncome) - Number.parseFloat(a.netIncome));
     case 'eps': return listToFilter.sort((a, b) => Number.parseFloat(b.eps) - Number.parseFloat(a.eps));
