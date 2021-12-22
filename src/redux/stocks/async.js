@@ -29,8 +29,8 @@ const requestData = () => async (dispatch) => {
   list.push(await fetchCompany(baseUrl, companies[6], apikey));
 
   list.push(await fetchCompany(baseUrl, companies[7], apikey));
-  dispatch(loadDataSuccess(list));
-  if (list[7] === undefined) { dispatch(loadDataFail()); }
+
+  if (list[7] === undefined) { dispatch(loadDataFail()); } else { dispatch(loadDataSuccess(list)); }
 };
 
 export default requestData;
