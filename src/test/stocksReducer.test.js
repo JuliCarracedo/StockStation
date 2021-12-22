@@ -3,7 +3,7 @@
 import stocksReducer, { REQUEST_DATA, REQUEST_DATA_FAIL, REQUEST_DATA_SUCCESS } from '../redux/stocks/stocks';
 
 describe('Stocks Reducer', () => {
-  const list = [[
+  const list = [
     {
       date: '2020-12-31',
       symbol: 'A',
@@ -22,7 +22,7 @@ describe('Stocks Reducer', () => {
       netIncome: 4,
       eps: 2,
     },
-  ]];
+  ];
 
   const initialState = {};
 

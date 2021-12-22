@@ -4,8 +4,9 @@ import CompanyLink from '../CompanyLink';
 import './Home.css';
 
 export const filterList = (listToFilter, filter) => {
+  console.log(filter);
   switch (filter) {
-    case 'income': return listToFilter.sort((a, b) => Number.parseFloat(b.income) - Number.parseFloat(a.income));
+    case 'income': return listToFilter.sort((a, b) => Number.parseFloat(b.netIncome) - Number.parseFloat(a.netIncome));
     case 'eps': return listToFilter.sort((a, b) => Number.parseFloat(b.eps) - Number.parseFloat(a.eps));
     case 'date': return listToFilter.sort((a, b) => new Date(b.date) - new Date(a.date));
     case 'alphabetical': return listToFilter.sort((a, b) => ((a.symbol < b.symbol) ? -1 : 1));
