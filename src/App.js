@@ -1,5 +1,3 @@
-/* eslint-disable no-nested-ternary */
-
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -23,12 +21,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        {error ? (<ErrorPage />) : (loading ? <Loading /> : (
+        {error && (<ErrorPage />)}
+        {(loading && !error) && <Loading />}
+        {(!loading && !error) && (
           <Routes>
             <Route exact path="/" element={<Home />} />
             {companies.map((company) => <Route key={company} exact path={`/${company}`} element={<CompanyPage title={company} />} />)}
           </Routes>
-        )) }
+        ) }
       </BrowserRouter>
     </div>
   );

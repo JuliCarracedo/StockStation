@@ -1,5 +1,3 @@
-/* eslint-disable no-nested-ternary */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
@@ -18,7 +16,10 @@ const CompanyPage = (props) => {
   return (
     <section className="companyPage">
 
-      {error ? (<ErrorPage />) : (loading ? <Loading /> : (
+      {error && (<ErrorPage />)}
+      {(loading && !error) && <Loading />}
+      {(!loading && !error)
+        && (
         <>
           <div className="welcome-page">
             <h2 className="welcome-page-title">
@@ -69,8 +70,7 @@ const CompanyPage = (props) => {
             </div>
           </div>
         </>
-      )) }
-
+        )}
     </section>
   );
 };
