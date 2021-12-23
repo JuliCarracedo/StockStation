@@ -21,7 +21,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](stocks-station.netlify.app)
 
 
 ## Getting Started
@@ -46,6 +46,7 @@ To get a local copy up and running follow these simple example steps.
 ### Usage
 
 - Run ```npm start``` to deploy a local version of the app
+- Reload the page as little as you can. The API only has 250 requests available per day and each loading of the page uses 8 of them
 
 ### Run tests#
 
@@ -76,8 +77,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Base design is property of [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License
 
